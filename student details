@@ -1,0 +1,54 @@
+const studentData = [
+    {
+      "studentName": "Jack",
+      "rollNumber": 1,
+      "joiningDate": "13/01/2021"
+    },
+    {},
+    {},
+    {
+      "studentName": "Rowling",
+      "rollNumber": 2,
+      "joiningDate": "11/01/2021"
+    },
+    {
+      "studentName": "Ali",
+      "rollNumber": 3,
+      "joiningDate": "21/03/2021"
+    },
+    {},
+    {
+      "studentName": "Rowling",
+      "rollNumber": 4,
+      "joiningDate": "21/03/2021"
+    },
+    {
+      "studentName": "Rowling",
+      "rollNumber": 6,
+      "joiningDate": "10/12/2021"
+    },
+    {
+      "studentName": "Ali",
+      "rollNumber": 5,
+      "joiningDate": "9/11/2021"
+    },
+    {},
+    {}
+  ];
+  const filteredData = studentData.filter(obj => Object.keys(obj).length !== 0);
+  let minDate = filteredData[0].joiningDate;
+  let maxDate = filteredData[0].joiningDate;
+  for (let i = 1; i < filteredData.length; i++) 
+  {
+    const joiningDate = filteredData[i].joiningDate;
+    if (joiningDate < minDate) 
+    {
+      minDate = joiningDate;
+    }
+    if (joiningDate > maxDate) 
+    {
+      maxDate = joiningDate;
+    }
+  }
+console.log(
+    "Minimum joining date", minDate, "Maximum joining date", maxDate);
